@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Membuat Form</title>
+  </head>
+  <body>
+    <form action="./bunga.jpg" method="POST">
+      <h4>Form</h4>
+      <input
+        type="text"
+        name="var1"
+        size="30"
+        placeholder="Enter your name here."
+      />
+      <br />
+      <br />
+      <input
+        type="text"
+        name="var1"
+        size="30"
+        placeholder="Enter your address here."
+      />
+      <br /><br />
+      <b>How old are you ?</b>
+      <br />
+      <input type="radio" name="var4" value="1" /> 10-15 <br />
+      <input type="radio" name="var4" value="1" /> 16-20 <br />
+      <input type="radio" name="var4" value="1" /> 21-25 <br />
+      <br />
+      <b>Which one do you there?</b><br /><br />
+      <input type="checkbox" name="vehicle1" value="Bike" /> I have a Bike
+      <br />
+      <input type="checkbox" name="vehicle2" value="Car" /> I have a Car <br />
+      <input type="checkbox" name="vehicle3" value="Boat" />I have a Boat <br />
+      <input type="checkbox" name="vehicle4" value="Plane" checked />I have a
+      Plane
+      <br />
+      <b>Where are you from ?</b>
+      <br />
+      <select name="var6" size="1">
+        <option value="BG">Bulgaria</option>
+        <option value="UK">United Kingdom</option>
+        <option value="USA">USA</option>
+        <option value="IDN" selected>Indonesia</option>
+      </select>
+      <br /><br />
+      <b>Enter your private code</b>
+      <input type="password" name="var7" />
+      <br /><br />
+      <b>Enter yout comment</b> <br />
+      <textarea name="var8" cols="30" rows="5"></textarea>
+      <br /><br />
+      <input type="submit" name="var5" value="Send" />
+      <input type="reset" name="var6" value="Clear" />
+    </form>
+  </body>
+</html>

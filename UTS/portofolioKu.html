@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portofolio Ku - UTS DPW</title>
+    <link rel="stylesheet" href="./portofolioKu.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+        width: 100%;
+        overflow-x: hidden;
+        color: #e7f6f2;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-around;
+        background: linear-gradient(90deg, #150050 0%, #120f2f 100%);
+        background-color: #1b121d;
+        /* padding: 35px 0; */
+        height: 90px;
+        align-items: center;
+        z-index: 1;
+      }
+
+      nav .logo img {
+        width: 70px;
+        height: 70px;
+      }
+
+      nav ul {
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        width: 40%;
+      }
+
+      nav ul li a {
+        color: #e7f6f2;
+        text-decoration: none;
+        transition: all 0.6s ease-in-out;
+      }
+
+      nav ul li a:hover {
+        color: #a617ff;
+        padding-bottom: 10px;
+        border-bottom: 3px solid #a617ff;
+        letter-spacing: 1px;
+      }
+
+      .navScroll {
+        position: fixed;
+        width: 100%;
+        top: 0;
+      }
+
+      /* Top navigation */
+      .topnav {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 20px;
+        position: relative;
+      }
+
+      .topnav input {
+        position: absolute;
+        width: 40px;
+        height: 28px;
+        top: -4px;
+        left: -6px;
+        opacity: 0;
+        cursor: pointer;
+        z-index: 2;
+      }
+
+      .topnav span {
+        display: block;
+        width: 28px;
+        height: 3px;
+        background-color: #e7f6f2;
+        border-radius: 3px;
+        transition: all 0.9s ease-in-out;
+      }
+
+      /* Animation span top navigation */
+      .topnav span:nth-child(2) {
+        transform-origin: 0 0;
+      }
+
+      .topnav span:last-child {
+        transform-origin: 0 100%;
+      }
+
+      .topnav input:checked ~ span:nth-child(2) {
+        transform: rotate(40deg);
+      }
+
+      .topnav input:checked ~ span:nth-child(3) {
+        transform: scale(0);
+      }
+
+      .topnav input:checked ~ span:last-child {
+        transform: rotate(-40deg);
+      }
+
+      .content {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          180deg,
+          #150050 10%,
+          #16003b 100%,
+          #120f2f 100%,
+          #1a1a40 100%
+        );
+        color: #e7f6f2;
+        padding: 2px 0px 20px 0px;
+      }
+
+      /* Slideshow container */
+      .slideshow-container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        margin: 0px 0px 30px 0px;
+      }
+
+      .slider img {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+      }
+
+      /* Next & previous buttons */
+      .slideshow-container .prev,
+      .slideshow-container .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+      }
+
+      .slideshow-container .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+      }
+
+      .slideshow-container .prev:hover,
+      .slideshow-container .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+
+      /* Caption text */
+      .slider-text {
+        color: #f2f2f2;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+      }
+
+      /* Number text (1/3 etc) */
+      .slider-numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+      }
+
+      /* The dots/bullets/indicators */
+      /* .slider-dot {
+        text-align: center;
+      }
+
+      .slider-dot .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+      }
+
+      .slideshow-container .active,
+      .dot:hover {
+        background-color: #717171;
+      } */
+
+      /* Fading animation */
+      .slideshow-container .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+      }
+
+      @keyframes fade {
+        from {
+          opacity: 0.4;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .content .company-title {
+        padding-bottom: 15px;
+        text-align: center;
+        font-weight: 300;
+        font-size: 30px;
+        font-style: italic;
+        letter-spacing: 5px;
+      }
+
+      .content .company {
+        margin: 20px 60px 20px 60px;
+        padding: 20px 20px 20px 20px;
+        border: 2px dashed #61199c;
+        border-radius: 20px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+      }
+
+      .content .company img {
+        width: 100px;
+      }
+
+      .content .company img:hover {
+        opacity: 0.7;
+      }
+
+      .content .iconProfile {
+        margin: 50px 60px 50px 60px;
+        overflow: hidden;
+      }
+
+      .content .iconProfile .iconProfile-slide {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .content .iconProfile .iconProfile-slide .card {
+        width: 300px;
+        height: 200px;
+        border: 2px dashed #61199c;
+        border-radius: 10px;
+        overflow: hidden;
+        margin: 0px 25px 20px 25px;
+        box-shadow: 0 4px 4px 0 rgba(255, 255, 255, 0.2),
+          0 6px 20px 0 rgba(255, 254, 254, 0.19);
+      }
+
+      .content .iconProfile .iconProfile-slide .card:hover {
+        background: linear-gradient(90deg, #1b121d 0%, #3f0071 100%);
+      }
+
+      .content .iconProfile .iconProfile-slide .card .card-img {
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+      }
+
+      .iconProfile-slide .card .card-img h2 {
+        margin: 20px 20px 0px 20px;
+        text-align: center;
+      }
+
+      .iconProfile-slide .card .card-img p {
+        margin: 10px 20px 20px 20px;
+        text-align: center;
+      }
+
+      .content .about {
+        width: 100%;
+        height: 120vh;
+        margin: 30px 0px 70px 0px;
+        display: flex;
+      }
+
+      .about .col-1 {
+        width: 50%;
+        height: 100%;
+        background-image: url("./images/bg-dark.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow: hidden;
+      }
+
+      .about .col-1 .sc {
+        width: 500px;
+        height: 600px;
+        border-radius: 10px;
+        border: 2px dashed #f6ecff;
+        position: absolute;
+        left: 300px;
+        margin-top: 100px;
+        box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2),
+          0 6px 20px 0 rgba(255, 254, 254, 0.19);
+        overflow: hidden;
+      }
+
+      .about .col-1 .sc img {
+        width: 80%;
+        height: 90%;
+        display: block;
+        margin: 30px auto;
+        /* object-fit: cover; */
+      }
+
+      .about .col-2 {
+        width: 50%;
+        height: 100%;
+      }
+
+      .about .col-2 .about-content {
+        margin-top: 100px;
+        margin-left: 180px;
+        width: 450px;
+        height: 600px;
+      }
+
+      .about .col-2 .about-content .hrTitleLeft {
+        border: 1px solid #e9d0fd;
+        width: 150px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      .about .col-2 .about-content h2 {
+        font-size: 40px;
+        font-weight: 300;
+        color: #f6ecff;
+        font-style: italic;
+      }
+
+      .about .col-2 .about-content p {
+        word-spacing: 2px;
+        font-size: 19px;
+        font-weight: 300;
+        text-align: justify;
+        margin-bottom: 10px;
+      }
+
+      .about .col-2 .about-content button {
+        background: linear-gradient(
+          180deg,
+          #150050 10%,
+          #16003b 100%,
+          #120f2f 100%,
+          #1a1a40 100%
+        );
+        border: 2px solid #8514e0;
+        border-radius: 10px;
+        color: white;
+        padding: 15px 72px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-top: 20px;
+        letter-spacing: 3px;
+      }
+
+      .about .col-2 .about-content button:hover {
+        background: white;
+        border: 2px solid #8514e0;
+        color: #8514e0;
+      }
+
+      .content .education {
+        margin: 20px 60px 80px 60px;
+        overflow: hidden;
+      }
+
+      .content .education .education-title {
+        padding-bottom: 15px;
+        text-align: center;
+        font-weight: 300;
+        font-size: 30px;
+        font-style: italic;
+        letter-spacing: 5px;
+      }
+
+      .hrTitle {
+        border: 2px solid #61199c;
+        margin: 0px 45% 30px 45%;
+      }
+
+      .content .education .education-slide {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .content .education .education-slide .card {
+        width: 330px;
+        height: 400px;
+        border: 2px solid #61199c;
+        border-radius: 10px;
+        overflow: hidden;
+        margin: 0px 25px 0px 25px;
+        box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2),
+          0 6px 20px 0 rgba(255, 254, 254, 0.19);
+      }
+
+      .content .education .education-slide .card:hover {
+        transform: scale(1.1);
+        transition: all 0.7s;
+      }
+
+      .content .education .education-slide .card .card-img {
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+      }
+
+      .content .education .education-slide .card .card-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .content .experience {
+        width: 100%;
+        height: 120vh;
+        margin: 30px 0px 70px 0px;
+        display: flex;
+      }
+
+      .experience .col-1 {
+        width: 50%;
+        height: 100%;
+      }
+
+      .experience .col-1 .experience-content {
+        margin-top: 80px;
+        margin-left: 60px;
+        width: 550px;
+        height: 600px;
+      }
+
+      .experience .col-1 .experience-content .hrTitleLeft {
+        border: 1px solid #e9d0fd;
+        width: 150px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      .experience .col-1 .experience-content h2 {
+        font-size: 40px;
+        font-weight: 300;
+        color: #f6ecff;
+        font-style: italic;
+      }
+
+      .experience .col-1 .experience-content p {
+        word-spacing: 2px;
+        font-size: 19px;
+        font-weight: 300;
+        text-align: justify;
+        margin-bottom: 10px;
+      }
+
+      .experience .col-1 .experience-content button {
+        background: linear-gradient(
+          180deg,
+          #150050 10%,
+          #16003b 100%,
+          #120f2f 100%,
+          #1a1a40 100%
+        );
+        border: 2px solid #8514e0;
+        border-radius: 10px;
+        color: white;
+        padding: 15px 72px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-top: 20px;
+        letter-spacing: 3px;
+      }
+
+      .experience .col-1 .experience-content button:hover {
+        background: white;
+        border: 2px solid #8514e0;
+        color: #8514e0;
+      }
+
+      .experience .col-2 {
+        width: 50%;
+        height: 100%;
+      }
+
+      .experience .col-2 .skill {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+
+      .experience .col-2 .skill .card {
+        width: 280px;
+        height: 200px;
+        border: 2px dashed #61199c;
+        border-radius: 10px;
+        overflow: hidden;
+        margin: 0px 25px 20px 25px;
+        box-shadow: 0 4px 4px 0 rgba(255, 255, 255, 0.2),
+          0 6px 20px 0 rgba(255, 254, 254, 0.19);
+        /* padding: 30px 30px; */
+      }
+
+      .experience .col-2 .skill .card:hover {
+        border: 2px dashed #b253ff;
+        box-shadow: 0 4px 4px 0 rgba(92, 41, 139, 0.2),
+          0 6px 20px 0 rgba(254, 254, 255, 0.19);
+        background: #61199c;
+      }
+
+      .experience .col-2 .skill .card h1 {
+        margin-top: 10px;
+        margin-left: 30px;
+        font-size: 100px;
+      }
+
+      .experience .col-2 .skill .card h2 {
+        margin-left: 30px;
+        margin-right: 30px;
+      }
+
+      .experience .col-2 iframe {
+        width: 560px;
+        height: 315px;
+        margin-top: 20px;
+      }
+
+      .content .contact {
+        width: 100%;
+        padding: 0px 60px 20px 60px;
+        overflow: hidden;
+      }
+
+      .content .contact .form-col2 {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .content .contact .form-col2 input {
+        width: 600px;
+        padding: 12px 20px;
+        margin: 8px 0px 8px 10px;
+        display: inline-block;
+        border: 2px solid #61199c;
+        border-radius: 4px;
+        box-sizing: border-box;
+        background-color: rgb(9, 4, 61);
+        color: #22053a;
+      }
+
+      .content .contact .form-col1 textarea {
+        width: 1200px;
+        height: 150px;
+        padding: 12px 20px;
+        margin: 8px 0px 8px 10px;
+        box-sizing: border-box;
+        border: 2px solid #61199c;
+        border-radius: 4px;
+        font-size: 16px;
+        resize: none;
+        background-color: rgb(9, 4, 61);
+        color: #7339a3;
+      }
+
+      .content .contact button {
+        background: linear-gradient(
+          180deg,
+          #150050 10%,
+          #16003b 100%,
+          #120f2f 100%,
+          #1a1a40 100%
+        );
+        border: 2px solid #8514e0;
+        border-radius: 10px;
+        color: white;
+        padding: 15px 72px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-top: 20px;
+        margin-left: 10px;
+        letter-spacing: 3px;
+      }
+
+      .content .contact button:hover {
+        background: white;
+        border: 2px solid #8514e0;
+        color: #8514e0;
+      }
+
+      footer {
+        width: 100%;
+        height: 30px;
+        background: linear-gradient(90deg, #1b121d 0%, #3f0071 100%);
+        background-color: #1b121d;
+        padding: 15px 0px 10px 0px;
+        box-shadow: 5px 15px 10px 10px #e7f6f2;
+        color: #e7f6f2;
+        text-align: center;
+        font-weight: 200;
+      }
+
+      /* Tablet */
+      @media screen and (max-width: 768px) {
+        nav ul {
+          width: 50%;
+        }
+      }
+
+      /* Mobile */
+      @media screen and (max-width: 576px) {
+        nav ul {
+          margin-top: 90px;
+          position: absolute;
+          right: 0;
+          top: 0;
+          height: 50vh;
+          width: 100%;
+          flex-direction: column;
+          justify-content: space-evenly;
+          align-items: center;
+          z-index: -1;
+          transform: translateY(-100%);
+          transition: all 1s;
+          background: linear-gradient(90deg, #1b121d 0%, #3f0071 100%);
+          opacity: 0;
+        }
+
+        .topnav {
+          display: flex;
+        }
+
+        nav ul.activeSlide {
+          transform: translateY(0);
+          opacity: 1;
+          z-index: 1;
+        }
+
+        .navScroll {
+          position: fixed;
+          width: 94%;
+          top: 0;
+        }
+
+        nav ul li a:hover {
+          color: #a617ff;
+          padding-bottom: 10px;
+          border-bottom: 3px solid #a617ff;
+          letter-spacing: 1px;
+        }
+
+        .slideshow-container {
+          width: 100%;
+          height: 100vh;
+          position: relative;
+        }
+
+        .slider img {
+          width: 100%;
+          height: 100vh;
+          object-fit: cover;
+        }
+
+        .slideshow-container .prev,
+        .slideshow-container .next,
+        .slideshow-container .text {
+          font-size: 11px;
+        }
+
+        .content .iconProfile .iconProfile-slide .card {
+          width: 350px;
+          height: 250px;
+        }
+
+        .content .about {
+          height: 100vh;
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          align-items: center;
+          margin-bottom: 100px;
+        }
+
+        .about .col-1 {
+          width: 100%;
+          height: 60%;
+        }
+
+        .about .col-1 .sc {
+          width: 300px;
+          height: 400px;
+          border-radius: 10px;
+          border: 2px dashed #f6ecff;
+          position: block;
+          margin: 60px 0px 20px -250px;
+        }
+
+        .about .col-2 {
+          width: 100%;
+        }
+
+        .about .col-2 .about-content {
+          margin-top: 30px;
+          margin-left: 50px;
+          width: 300px;
+          height: 400px;
+        }
+
+        .content .education {
+          margin-top: 350px;
+        }
+
+        .content .company img {
+          width: 50px;
+        }
+
+        .content .education .education-slide .card {
+          margin-bottom: 30px;
+          width: 500px;
+        }
+
+        .content .education .education-slide .card:hover {
+          transform: scale(0.9);
+          transition: all 0.7s;
+        }
+
+        .content .experience {
+          height: 100vh;
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          align-items: center;
+          margin-bottom: 1200px;
+        }
+
+        .experience .col-1 {
+          width: 100%;
+          height: 100%;
+        }
+
+        .experience .col-1 .experience-content {
+          margin-top: 20px;
+          margin-left: 45px;
+          width: 300px;
+          height: 400px;
+        }
+
+        .experience .col-2 {
+          width: 100%;
+          height: 100%;
+        }
+
+        .experience .col-2 iframe {
+          width: 330px;
+          height: 200px;
+          margin-left: 30px;
+        }
+
+        .content .contact {
+          width: 100%;
+          padding: 0px 30px 20px 30px;
+        }
+
+        .content .contact .form-col2 input {
+          width: 300px;
+        }
+
+        .content .contact .form-col1 textarea {
+          width: 300px;
+        }
+
+        .content .contact button {
+          width: 300px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <nav>
+      <div class="logo">
+        <a href="#">
+          <img src="./images/Logoku.png" alt="Logo" />
+          <!-- <h4>Kang Kepo</h4> -->
+        </a>
+      </div>
+      <ul>
+        <li><a href="portofolioKu.html">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="topnav">
+        <input type="checkbox" />
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+    <!-- End Header -->
+
+    <!-- Content -->
+    <div class="content">
+      <!-- Slider -->
+      <div class="slideshow-container">
+        <div class="slider fade">
+          <!-- <div class="slider-numbertext">1 / 3</div> -->
+          <img src="./images/Slider1.jpg" />
+          <!-- <div class="slider-text">Caption Text</div> -->
+        </div>
+
+        <div class="slider fade">
+          <!-- <div class="slider-numbertext">2 / 3</div> -->
+          <img src="./images/Slider2.jpg" />
+          <!-- <div class="slider-text">Caption Two</div> -->
+        </div>
+
+        <div class="slider fade">
+          <!-- <div class="slider-numbertext">3 / 3</div> -->
+          <img src="./images/Slider3.jpg" />
+          <!-- <div class="slider-text">Caption Three</div> -->
+        </div>
+
+        <a class="prev" onclick="addSlide(-1)">❮</a>
+        <a class="next" onclick="addSlide(1)">❯</a>
+      </div>
+      <!-- 
+      <div class="slider-dot">
+        <span class="dot" onclick="backSlide(1)"></span>
+        <span class="dot" onclick="backSlide(2)"></span>
+        <span class="dot" onclick="backSlide(3)"></span>
+      </div> -->
+      <!-- End Slider -->
+
+      <!-- Icon Profile -->
+      <div class="iconProfile" id="iconProfile">
+        <div class="iconProfile-slide">
+          <div class="card">
+            <div class="card-img">
+              <h2>Kemampuan Hard Skills</h2>
+              <p>
+                Kemampuan menguasai front end, back end, UI dan UX, serta
+                me-manage database adalah hard skills yang wajib dikuasai oleh
+                seorang Full Stack Developer.
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-img">
+              <h2>Kemampuan Berkomunikasi</h2>
+              <p>
+                Memiliki kemampuan berkomunikasi yang baik merupakan bekal utama
+                bagi semua jenis profesi, tak terkecuali dengan Full Stack
+                Developer.
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-img">
+              <h2>Berpikir Kritis</h2>
+              <p>
+                Berpikir kritis dalam melakukan segala sesuatu termasuk
+                mengambil keputusan adalah point penting lainnya yang harus
+                dimiliki seorang Full Stack Developer.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Icon Profile -->
+
+      <!-- About -->
+      <div class="about" id="about">
+        <div class="col-1">
+          <div class="sc">
+            <img src="./images/aku4.JPG" alt="" />
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="about-content">
+            <h2>JUNIOR DEVELOPMENT</h2>
+            <hr class="hrTitleLeft" />
+            <p>
+              Seseorang pemula yang bertugas untuk mewujudkan desain sebuah
+              produk atau layanan, biasanya berupa software dan website.
+            </p>
+            <p>
+              Developer membuat produk dengan cara menulis baris-baris kode yang
+              rumit dengan menggunakan berbagai bahasa pemrograman seperti
+              Phyton atau HTML.
+            </p>
+            <p>
+              Junior development akan bertanggung jawab dalam Merancang,
+              mendesain, mengembangkan dan memodifikasi suatu aplikasi atau web.
+            </p>
+            <button>EXPERIENCE</button>
+          </div>
+        </div>
+      </div>
+      <!-- End About -->
+
+      <!-- Education -->
+      <div class="education" id="education">
+        <div class="education-title"><p>EDUCATION</p></div>
+        <div class="hrTitle"></div>
+        <div class="education-slide">
+          <div class="card">
+            <div class="card-img">
+              <img src="./images/aku1.JPG" alt="" />
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-img">
+              <img src="./images/aku2.JPG" alt="" />
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-img">
+              <img src="./images/aku3.JPG" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Education -->
+
+      <!-- Experience -->
+      <div class="experience" id="experience">
+        <div class="col-1">
+          <div class="experience-content">
+            <h2>EXPERIENCE</h2>
+            <hr class="hrTitleLeft" />
+            <p>
+              Pada tahun 2019, pertama kali ngoding atau membuat suatu aplikasi.
+              pada saat itu masih menggunakan bahasa native, seperti HTML, CSS,
+              PHP dan Javascript.
+            </p>
+            <p>
+              Pada Tahun 2020, Saya melakukan prakerin di salah satu perusahaan
+              yang ada di Surabaya. perusahaan tersebut merupakan pembuatan
+              software managemen sekolah contohnya seperti absensi, keuangan,
+              dan raport siswa.
+            </p>
+            <p>
+              Pada Tahun 2021, Saya Lulus. dan saya di terima disalah satu
+              kampus yang ada di malang, yaitu POLINEMA (Politeknik Negeri
+              Malang) dengan jurusan Teknologi Informasi. dan pada saat itu juga
+              saya mendapatkan sebuah project dari perusahaan yang ada di malang
+              yaitu Hummasoft. Project tersebut menggunakan Laravel dan
+              Bootstrap.
+            </p>
+            <button>ABOUT</button>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="skill">
+            <div class="card">
+              <h1>01</h1>
+              <h2>MICSOSOFT OFFICE</h2>
+            </div>
+            <div class="card">
+              <h1>02</h1>
+              <h2>COREL & PHOTOSHOP</h2>
+            </div>
+            <div class="card">
+              <h1>03</h1>
+              <h2>FRONTEND</h2>
+            </div>
+            <div class="card">
+              <h1>04</h1>
+              <h2>BACKEND</h2>
+            </div>
+          </div>
+          <iframe
+            src="https://www.youtube.com/embed/htO35gA5aVQ"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+      <!-- End Experience -->
+
+      <!-- Company -->
+      <div class="company-title"><p>COMPANY</p></div>
+      <div class="hrTitle"></div>
+      <div class="company">
+        <div class="sd">
+          <img src="./images/schooltalk.png" alt="" />
+        </div>
+        <div class="smp">
+          <img src="./images/hummasoft.png" alt="" />
+        </div>
+        <div class="sma">
+          <img src="./images/company1.png" alt="" />
+        </div>
+        <div class="sma">
+          <img src="./images/company2.jpg" alt="" />
+        </div>
+      </div>
+      <!-- End Company -->
+
+      <!-- Contact -->
+      <div class="company-title"><p>CONTACT</p></div>
+      <div class="hrTitle"></div>
+      <div class="contact" id="contact">
+        <div class="form-col2">
+          <input type="text" placeholder="Your Name*" />
+          <input type="text" placeholder="Your Email*" />
+          <input type="text" placeholder="Your Phone (Optional)" />
+          <input type="text" placeholder="Topic (Optional)" />
+        </div>
+        <div class="form-col1">
+          <textarea>Message*</textarea>
+        </div>
+        <button>SEND MESSAGE*</button>
+      </div>
+      <!-- End Contact -->
+    </div>
+    <!-- End Content -->
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer">
+        <p>©copyright 2022 Muhammad Hatta</p>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <script src="./portofolioKu.js" defer></script>
+  </body>
+</html>

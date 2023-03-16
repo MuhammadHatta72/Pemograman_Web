@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FLIP BOOK</title>
+    <link rel="stylesheet" href="./FlipBook.css" />
+    <script src="./FlipBook.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/b0f29e9bfe.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- Previous Button -->
+    <button id="prev-btn">
+      <i class="fas fa-hand-point-left"></i>
+    </button>
+
+    <!-- Book -->
+    <div id="book" class="book">
+      <!-- Paper 1 -->
+      <div id="p1" class="paper">
+        <div class="front">
+          <div id="f1" class="front-content">
+            <img src="./cover.jpg" alt="Cover Book" class="coverImg" />
+          </div>
+        </div>
+        <div class="back" style="display: flex">
+          <div id="b1" class="back-content">
+            <img
+              src="./logo_polinema.png"
+              alt="Logo Polinema"
+              class="logoBook"
+            />
+            <h3>PRAKATA</h3>
+            <p>
+              Alhamdulilah, puji syukur penulis panjatkan kepada Tuhan Yang Maha
+              Esa karena atas rahmat dan hidayah-Nya, penulis dapat
+              menyelesaikan buku Belajar Frontend menggunakan HTML, CSS, dan
+              JavaScript
+            </p>
+            <p>
+              Buku Belajar Frontend, belajar mengenai dasar-dasar pemrograman
+              web disusun untuk keperluan mahasiswa atau siapapun yang ingin
+              belajar mengenai Frontend web. Pada buku ini berisi bagaimana
+              dapat membuat membuat website dengan menggunakan HTML, CSS, dan
+              JavaScript
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Paper 2 -->
+      <div id="p2" class="paper">
+        <div class="front">
+          <div id="f2" class="front-content">
+            <img
+              src="./logo_polinema.png"
+              alt="Logo Polinema"
+              class="logoBook"
+            />
+            <h3>KATA PENGANTAR</h3>
+            <p>
+              Segala puji syukur kepada Tuhan Yang Maha Esa karena berkat
+              rahmatNya penulisan buku belajar frontend dapat terselesaikan
+              dengan baik. Buku ini disusun untuk me-menuhi kebutuhan mahasiswa
+              atau siapapun yang akan belajar mengenai frontend web. Pada buku
+              Web Programming yang disajikan dalam bentuk praktikum dan
+              diharapkan dapat membekali maha-siswa atau siapapun yang
+              mempelajari buku ini.
+            </p>
+            <p>
+              Penulis menyadari sepenuhnya bahwa buku ini memiliki banyak
+              kekurangan. Untuk itu penulis dengan mengharapkan adanya masukan
+              dan kritik yang membangun dari berbagai pihak demi kesempurnaan
+              buku ini di masa yang akan datang. Semoga buku ini bisa bermanfaat
+              bagi para pem-bacanya
+            </p>
+            <div class="ttd">
+              <p>Malang, 2022</p>
+              <p>Muhammad Hatta</p>
+              <br />
+              <br />
+              <p>____________________</p>
+            </div>
+          </div>
+        </div>
+        <div class="back">
+          <div id="b2" class="back-content">
+            <img
+              src="./logo_polinema.png"
+              alt="Logo Polinema"
+              class="logoBook"
+            />
+            <h3>DAFTAR ISI</h3>
+            <ol class="daftarIsi">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <!-- Paper 3 -->
+      <div id="p3" class="paper">
+        <div class="front">
+          <div id="f3" class="front-content">
+            <img src="./html.jpg" alt="HTML Book" class="coverImg" />
+          </div>
+        </div>
+        <div class="back">
+          <div id="b3" class="back-content">
+            <img src="./css.jpg" alt="CSS Book" class="coverImg" />
+          </div>
+        </div>
+      </div>
+      <!-- Paper 4 -->
+      <div id="p4" class="paper">
+        <div class="front">
+          <div id="f4" class="front-content">
+            <img
+              src="./javascript.jpg"
+              alt="Javascript Book"
+              class="coverImg"
+            />
+          </div>
+        </div>
+        <div class="back">
+          <div id="b4" class="back-content">
+            <h3 style="text-align: center">DAFTAR PUSTAKA</h3>
+            <p>
+              Abdulloh, R. (2018). 7 in 1 Pemrograman Web Untuk Pemula. Jakarta:
+              Elex Media Komputindo
+            </p>
+            <p>
+              Aldeheid, A. (2015). Website no.1 Cara Mudah Bikin Website dan
+              Promosi ke Seo. Yogyakarta: Penerbit Mediakom
+            </p>
+            <p>
+              Hidayatulloh, P., & Kawistara, J. K. (2014). Perancangan Web.
+              Bandung: Informatika.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Next Button -->
+    <button id="next-btn">
+      <i class="fas fa-hand-point-right"></i>
+    </button>
+  </body>
+</html>

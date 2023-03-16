@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Belajar CSS</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      header {
+        width: 100%;
+        background-color: #aae3a7;
+        height: 100px;
+      }
+      nav {
+        margin: auto;
+        float: right;
+        margin-top: 30px;
+        margin-right: 20px;
+      }
+      ul {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+      }
+      ul li {
+        background-color: #f1f1f1;
+        position: relative;
+      }
+      li a {
+        display: block;
+        color: #515151;
+        padding: 0.5em 1em;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+      li a:hover {
+        background-color: #515151;
+        color: white;
+      }
+      li a.active {
+        background-color: #44b5b5;
+        color: white;
+      }
+      .submenu {
+        flex-direction: column;
+        position: absolute;
+        display: none;
+      }
+      nav li:hover > a {
+        background-color: #515151;
+        color: white;
+      }
+      nav li:hover ul {
+        display: block;
+        min-width: 150px;
+      }
+      .logo {
+        padding-top: 10px;
+        padding-left: 20px;
+        float: left;
+        width: 80px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img class="logo" src="./logo_polinema.png" alt="Logo" />
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li>
+            <a href="#">Service</a>
+            <ul class="submenu">
+              <li><a href="">Service1</a></li>
+              <li><a href="">Service2</a></li>
+              <li><a href="">Service3</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Project</a>
+            <ul class="submenu">
+              <li><a href="">Project1</a></li>
+              <li><a href="">Project2</a></li>
+            </ul>
+          </li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </nav>
+    </header>
+  </body>
+</html>
